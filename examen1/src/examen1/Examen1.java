@@ -15,7 +15,7 @@ public class Examen1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        trianguloPascal(8);
+        trianguloPascal(10);
     }
     //ejercicio1
     public static int compararCadenas(String padre, String hija){
@@ -55,24 +55,27 @@ public class Examen1 {
         return resultado;
     }
     //ejercicio3
+    //este se parece pero no es igual este codigo no funciona para este ejercio
     public static void trianguloPascal(int lineas) {
         int num = 0;
-        for (int i = 0; i < lineas; i++) {
-            for (int y = 0; y < lineas - i; ++y) {
-                System.out.println(" ");
+        for (int i = 0; i < lineas*4; i++) {
+            for (int y = 0; y < lineas*4 - i; ++y) {
+                System.out.print(" ");
             }
             num = 1;
             for (int j = 0; j <= i; j++) {
                 if (num % 2 == 0) {
-                    System.out.println("◌");
+                    System.out.print("  ");
                 } else {
-                    System.out.println("◉");
+                    System.out.print(" ◉");
                 }
                 num = num * (i - j) / (j + 1);
             }
             System.out.println("");
         }
     }
+    //otro intento
+    
     public static int factorial(int n) {
         if (n == 0) {
             return 1;
