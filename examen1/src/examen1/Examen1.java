@@ -5,20 +5,58 @@
  */
 package examen1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author icomsqa1
  */
 public class Examen1 {
+    static Scanner leer = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        trianguloPascal(10);
+        boolean salir = true;
+    
+        do{
+        System.out.println("escoga una opcion: \n1. ejercicio 1\n2. ejercicio 2\n3. ejercicio3\n0. sair");
+        int opcion = leer.nextInt();
+        switch (opcion) {
+            case 1:
+                ejercicio1();
+                break;
+            case 2:
+                ejercicio2();
+                break;
+            case 3: 
+                ejercicio3();
+                break;
+                
+            default:
+                salir = false;
+                
+        }
+        }while(salir);
     }
     //ejercicio1
-    public static int compararCadenas(String padre, String hija){
+    public static void ejercicio1(){
+        System.out.print("Danos dos palabras y te diremos si puedes contruir una apartir de la otra "
+                + "\nPalabra 1: ");
+        String padre = leer.next();
+        System.out.print("Palabra 2: ");
+        String hija = leer.next();
+        
+        if(compararCadenas(padre, hija)){
+            System.out.println("Buenas noticias, si se puede.");
+        }else{
+            System.out.println("intenta con otra palabra.");
+        }
+        System.out.println("\n\n\n");
+
+    }
+    public static boolean compararCadenas(String padre, String hija){
         char[] apadre = padre.toCharArray();
         char[] ahija = hija.toCharArray();
         
@@ -38,14 +76,22 @@ public class Examen1 {
         }
   
         if(hija.isEmpty()){
-            return 1;
+            return true;
         }else{
-            return 0;  
+            return false;  
 
         }
         
     }
     //ejercicio2
+    public static void ejercicio2(){
+        System.out.print("aqui ejecutaremos una serie, solo danos dos numeros: \nx: ");
+        int x = leer.nextInt();
+        System.out.print("n: ");
+        int n = leer.nextInt();
+        System.out.println("el resultado es: " + sumatoria(x, n));
+        System.out.println("\n\n\n");
+    }
     public static double sumatoria(int x, int n){
         double resultado = 0;
         
@@ -55,11 +101,16 @@ public class Examen1 {
         return resultado;
     }
     //ejercicio3
-    //este se parece pero no es igual este codigo no funciona para este ejercio
+    public static void ejercicio3(){
+        System.out.println("ups lo sentimos, regresa luego todavia estoy trabajando en esto");
+        System.out.println("\n\n\n");
+
+    }
+    //este se parece pero no es igual este codigo no funciona para este ejercio 
     public static void trianguloPascal(int lineas) {
         int num = 0;
-        for (int i = 0; i < lineas*4; i++) {
-            for (int y = 0; y < lineas*4 - i; ++y) {
+        for (int i = 0; i < lineas; i++) {
+            for (int y = 0; y < lineas - i; ++y) {
                 System.out.print(" ");
             }
             num = 1;
@@ -76,6 +127,10 @@ public class Examen1 {
     }
     //otro intento
     
+    
+    
+    
+    //complementos
     public static int factorial(int n) {
         if (n == 0) {
             return 1;
