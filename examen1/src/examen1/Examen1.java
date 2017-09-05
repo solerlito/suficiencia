@@ -106,7 +106,7 @@ public class Examen1 {
     }
     //ejercicio3
     public static void ejercicio3(){
-        triangulo(1);
+        triangulo(5);
     }
     //este se parece pero no es igual este codigo no funciona para este ejercio 
     public static void trianguloPascal(int lineas) {
@@ -129,17 +129,27 @@ public class Examen1 {
     }
     //otro intento
     public static void triangulo(int filas) {
-        for (int i = 0; i < filas+2; i++) {
-            for (int j = 0; j < filas+2 - i ; j++) {
+        for (int i = 0; i < filas*3; i++) {
+            for (int j = 0; j < 3*filas -i ; j++) {
                 System.out.print(" ");
             }
+            
             for (int j = 0; j <= i; j++) {
-                System.out.print(" @");  
+                if(i < 3)
+                System.out.print(" @");
+                else{
+                    if (i%3 == 0) {
+                        System.out.print(" @");
+                    }else
+                        System.out.print(" @");
+                }
+                   
             }
             
             System.out.println();
 
         }
+        
 
     }
 
