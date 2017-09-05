@@ -3,15 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package examen2;
+package lab3;
 
 /**
  *
  * @author icomsqa1
  */
-public class examen2 {
+public class lab3 {
     public static void main(String[] args) {
-        int n= 9;
+        conejo();
+    }
+    
+    public static void ejercicio2(int n){
         for (int i = 0; i < n; i++) {
             
             for (int j = 0; j < n; j++) {
@@ -30,12 +33,22 @@ public class examen2 {
                 }else{
                     System.out.print("   ");
                 }
-
-         
-                
             }
             System.out.println(" ");
         }
     }
     
+    public static void intercalarCadenas(String uno, String dos){
+        String cadena = "";
+        
+       
+        for (int i = 0; i < uno.length(); i++) {
+            cadena += uno.charAt(i) + "" +dos.charAt(i);
+        }
+        System.out.println(cadena);
+    }
+    
+    public static void conejo(){
+        
+    }
 }
