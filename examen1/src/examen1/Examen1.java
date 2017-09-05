@@ -17,7 +17,7 @@ public class Examen1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         boolean salir = true;
     
         do{
@@ -39,6 +39,10 @@ public class Examen1 {
                 
         }
         }while(salir);
+    }
+    
+    public static void main(String[] args) {
+        ejercicio3();
     }
     //ejercicio1
     public static void ejercicio1(){
@@ -102,9 +106,7 @@ public class Examen1 {
     }
     //ejercicio3
     public static void ejercicio3(){
-        System.out.println("ups lo sentimos, regresa luego todavia estoy trabajando en esto");
-        System.out.println("\n\n\n");
-
+        triangulo(1);
     }
     //este se parece pero no es igual este codigo no funciona para este ejercio 
     public static void trianguloPascal(int lineas) {
@@ -126,8 +128,21 @@ public class Examen1 {
         }
     }
     //otro intento
-    
-    
+    public static void triangulo(int filas) {
+        for (int i = 0; i < filas+2; i++) {
+            for (int j = 0; j < filas+2 - i ; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j <= i; j++) {
+                System.out.print(" @");  
+            }
+            
+            System.out.println();
+
+        }
+
+    }
+
     
     
     //complementos
